@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Initialization Steps</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a73e8;
+            border-bottom: 2px solid #e8eaed;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .step {
+            margin-bottom: 25px;
+        }
+        .step h3 {
+            margin-bottom: 10px;
+            color: #202124;
+        }
+        .step p {
+            margin-bottom: 10px;
+            color: #5f6368;
+        }
+        code {
+            background-color: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #d93025;
+        }
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Git Initialization & Push To GitHub</h1>
+    <p>Follow these step-by-step terminal commands to initialize a new Git repository, add files, commit them, and push to a <code>main</code> branch on GitHub.</p>
+
+    <div class="step">
+        <h3>1. Initialize a new Git repository</h3>
+        <p>Creates a new, empty Git repository in your current directory.</p>
+        <pre><code>git init</code></pre>
+    </div>
+
+    <div class="step">
+        <h3>2. Stage all files</h3>
+        <p>Adds all files in the current directory to the staging area, preparing them for the next commit.</p>
+        <pre><code>git add .</code></pre>
+    </div>
+
+    <div class="step">
+        <h3>3. Commit the changes</h3>
+        <p>Commits the staged files with the specified message.</p>
+        <pre><code>git commit -m "Initial Build"</code></pre>
+    </div>
+
+    <div class="step">
+        <h3>4. Rename the default branch</h3>
+        <p>Ensures the primary branch is named <code>main</code>, which is the current standard for GitHub.</p>
+        <pre><code>git branch -M main</code></pre>
+    </div>
+
+    <div class="step">
+        <h3>5. Add remote repository URL</h3>
+        <p>Links your local repository to a remote repository on GitHub. <em>(Replace the URL with your actual GitHub repository URL.)</em></p>
+        <pre><code>git remote add origin https://github.com/your-username/your-repository.git</code></pre>
+    </div>
+
+    <div class="step">
+        <h3>6. Push code to GitHub</h3>
+        <p>Pushes the commits to the remote <code>main</code> branch and sets the upstream tracking branch.</p>
+        <pre><code>git push -u origin main</code></pre>
+    </div>
+    <div class="step">
+        <h3>Are these all the files to be created?</h3>
+        <p><strong>No, these are not files.</strong> These are <em>commands</em> you run in your terminal (like Command Prompt, PowerShell, or Git Bash). They apply to the files you already have in your project folder (like your HTML, CSS, or JS files).</p>
+    </div>
+
+    <div class="step">
+        <h3>How to Automate or "Run at Once"</h3>
+        <p>Yes, you can automate this! You have two main options:</p>
+        
+        <h4>Option 1: Chain them in the terminal (Quickest)</h4>
+        <p>You can use the <code>&&</code> operator to run all the commands back-to-back in one go. If one fails, the rest will stop.</p>
+        <pre><code>git init && git add . && git commit -m "Initial Build" && git branch -M main && git remote add origin https://github.com/your-username/your-repository.git && git push -u origin main</code></pre>
+
+        <h4>Option 2: Create a Script File (Best for reuse)</h4>
+        <p>If you do this often, you can create a script file in your project folder that runs these commands for you.</p>
+        <ul>
+            <li><strong>On Windows:</strong> Create a new file named <code>push.bat</code></li>
+            <li><strong>On Mac/Linux:</strong> Create a new file named <code>push.sh</code></li>
+        </ul>
+        <p>Paste the following code into the file (don't forget to replace the URL!). Whenever you double-click the file or run it in the terminal, it will do everything instantly.</p>
+        <pre><code>git init
+git add .
+git commit -m "Initial Build"
+git branch -M main
+git remote add origin https://github.com/your-username/your-repository.git
+git push -u origin main
+pause</code></pre>
+    </div>
+</div>
+
+</body>
+</html>
